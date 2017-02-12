@@ -19,5 +19,20 @@
   "bugs": {
     "url": "https://github.com/Zertu/reactdemo/issues"
   },
-  "homepage": "https://github.com/Zertu/reactdemo#readme"
+  "homepage": "https://github.com/Zertu/reactdemo#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "^1.3.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.22.0"
+  }
 }
