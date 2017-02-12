@@ -1,0 +1,23 @@
+{
+  "name": "reactdemo",
+  "version": "0.0.1",
+  "description": "学习react",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zertu/reactdemo.git"
+  },
+  "keywords": [
+    "react",
+    "demo"
+  ],
+  "author": "Zertu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zertu/reactdemo/issues"
+  },
+  "homepage": "https://github.com/Zertu/reactdemo#readme"
+}
