@@ -4,10 +4,10 @@ import styles from './app.css';
 
 const app = () => (
   <div>
-    appsadsd
+    hello world
   </div>
 );
-
+console.log(app.propTypes)
 app.propTypes = {
 
 };

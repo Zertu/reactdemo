@@ -28,7 +28,4 @@ module.exports = {
         extensions: ['.js', '.json', '.scss']
     },
     //插件项
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
 };
