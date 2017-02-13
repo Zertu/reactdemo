@@ -1,10 +1,11 @@
-const webpack = require('webpack');
+const webpack = require('webpack')
 
 const vendors = [
     'react',
     'react-dom',
-    'react-css-modules'
-];
+    'react-css-modules',
+    'mobx-react'
+]
 
 module.exports = {
     output: {
@@ -13,7 +14,7 @@ module.exports = {
         library: '[name]',
     },
     entry: {
-        "lib": vendors,
+        'lib': vendors,
     },
     plugins: [
         new webpack.DllPlugin({
@@ -22,4 +23,4 @@ module.exports = {
             context: __dirname,
         }),
     ],
-};
+}

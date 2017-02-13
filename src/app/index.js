@@ -1,4 +1,3 @@
-import app from './app';
+import RepeatArray from './app'
 
-
-export default app;
+export default RepeatArray
