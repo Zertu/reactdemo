@@ -27,5 +27,5 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.scss']
     },
-    //插件项
+    plugins: [new webpack.DllReferencePlugin({context: __dirname, manifest: require('./manifest.json')})]
 };
