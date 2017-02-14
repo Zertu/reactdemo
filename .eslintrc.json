@@ -5,6 +5,7 @@
         "es6": true
     },
     "extends": "eslint:recommended",
+    "parser": "babel-eslint",
     "parserOptions": {
         "sourceType": "module",
         "ecmaFeatures": {
@@ -12,6 +13,7 @@
         }
     },
     "rules": {
+        "strict":0,
         "linebreak-style": [
             "warn",
             "windows"

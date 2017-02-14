@@ -1,4 +1,4 @@
-import RepeatArray from './app/index.js'
+import TodoView,{TodoView} from './app/index.js'
 import React from 'react';
 import ReactDOM from 'react-dom';
 
