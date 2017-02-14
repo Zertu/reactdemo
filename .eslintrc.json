@@ -14,10 +14,8 @@
     },
     "rules": {
         "strict":0,
-        "linebreak-style": [
-            "warn",
-            "windows"
-        ],
+        "no-undef": 1, // http://eslint.org/docs/rules/no-undef
+        "no-unused-vars":"warn",
         "quotes": [
             "error",
             "single"
