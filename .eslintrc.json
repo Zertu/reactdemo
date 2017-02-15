@@ -13,7 +13,7 @@
         }
     },
     "rules": {
-        "strict":0,
+        "strict":1,
         "no-undef": 1, // http://eslint.org/docs/rules/no-undef
         "no-unused-vars":"warn",
         "quotes": [

@@ -22,7 +22,9 @@ const App=()=> {
     </div>
   )
 }
-render(<Welcome />)
+
+const number =[1,2,3,4,5,56,23,632,5623,45,23,2536,2]
+render(<Welcome number={number}  fuck={true}/>)
 // const element = <Welcome name="Sara" />
 // ReactDOM.render(
 //   element,
