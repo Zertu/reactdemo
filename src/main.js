@@ -1,18 +1,17 @@
-import TodoView,{TodoView} from './app/index.js'
-import React from 'react';
-import ReactDOM from 'react-dom';
+import app from './app/app.js'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-class Welcome extends React.Component {
-  render() {
-    return <h1>Hello, {this.props.name}</h1>;
-  }
+const render = (Component) => {
+  ReactDOM.render(
+      <Component/>,
+    document.getElementById('root')
+  )
 }
+
+render(app)
 // const element = <Welcome name="Sara" />
 // ReactDOM.render(
 //   element,
 //   document.getElementById('root')
 // )
-ReactDOM.render(
-   <RepeatArray name={name}/>,
-    document.getElementById('root')
-)
