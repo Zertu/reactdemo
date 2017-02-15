@@ -1,4 +1,6 @@
-const webpack = require('webpack'), {resolve} = require('path')
+const webpack = require('webpack'), 
+{resolve} = require('path'),
+OpenBrowserPlugin = require('open-browser-webpack-plugin')
 module.exports = {
     //页面入口文件配置
     entry: [ 'webpack-dev-server/client?http://localhost:3000',
@@ -51,7 +53,10 @@ module.exports = {
         new webpack.DllReferencePlugin({context: __dirname, manifest: require('./manifest.json')}),
         new webpack.HotModuleReplacementPlugin(),
         // enable HMR globally
+        
+        new webpack.NamedModulesPlugin(),
 
-        new webpack.NamedModulesPlugin()
+        // 打开浏览器地址
+        new OpenBrowserPlugin({url:'http://localhost:3000'})
     ]
 }

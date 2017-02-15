@@ -20,6 +20,7 @@
             "error",
             "single"
         ],
+        "no-console":"warn",
         "semi": [
             "error",
             "never"
