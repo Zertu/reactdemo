@@ -8,7 +8,6 @@ class Doublebind extends React.Component{
         }
     }
     handlechange=(val)=>{
-        console.log(val)
         this.setState({fuck:val})
     }
     render(){
@@ -29,7 +28,8 @@ class Fuck extends React.Component {
     }
 
     render() {
-        return (
+
+        return (         
             <div>
                 <input value={this.props.val} onChange={this.handlechange} type='text' />
             </div>
