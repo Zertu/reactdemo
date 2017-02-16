@@ -1,6 +1,7 @@
 import Calculator from './app/app.js'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Doublebind from './doublebind.js'
 
 const render = (Component) => {
   ReactDOM.render(
@@ -10,6 +11,10 @@ const render = (Component) => {
 }
 
 
+ReactDOM.render(
+  <Doublebind />,
+  document.getElementById('roots')
+)
 
 const number =[1,2,3,4,5,56,23,632,5623,45,23,2536,2]
 render(<Calculator/>)
