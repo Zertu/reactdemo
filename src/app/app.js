@@ -1,44 +1,95 @@
 import React from 'react'
 import styles from './app.css'
 
-class Welcome extends React.Component {
+
+function toCelsius(fahrenheit) {  
+  return (fahrenheit - 32) * 5 / 9
+}
+
+function toFahrenheit(celsius) {  
+  return (celsius * 9 / 5) + 32
+}
+
+function tryConvert(value, convert) {  
+  const input = parseFloat(value)
+  if (Number.isNaN(input)) {
+    return ''
+  }
+  const output = convert(input)
+  const rounded = Math.round(output * 1000) / 1000
+  return rounded.toString()
+}
+
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+}
+
+
+class TemperatureInput extends React.Component {  
   constructor(props) {
     super(props)
-    this.state = {
-      date: new Date()
-    }
+    // 干掉私有的状态 this.state = {value: ''} 
   }
-  componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000)
-  }
-  tick() {
-    this.setState({date: new Date()})
-  }
-  componentWillUnmount() {
-    clearInterval(this.timerID)
-  }
-  render() {
-    const fuck = this.props.fuck? 'fuck': 'fucked'
-    const numbers =  this.props.number
-    const num = numbers.map((n,el)=>{
-      return   <div key={el}>{n=n++}</div>
-    })
 
-    if (this.props.fuck) {
-      return (
-        <h1 >
-          Hello, {this
-            .state
-            .date
-            .toLocaleTimeString()}{fuck}   {num}
-         
-        </h1>
-      )
-    } else {
-      return (
-        <div>fuck</div>
-      )
-    }
+  handleChange=(e)=> {
+    // 干掉 this.setState({value: e.target.value})
+    this.props.onChange(e.target.value)
   }
-} 
-export default Welcome
+
+  render() {
+    // 干掉 const value = this.state.value
+    const value = this.props.value
+    const scale = this.props.scale
+    return (
+      <fieldset>
+        <legend>Enter temperature in {scaleNames[scale]}:</legend>
+        <input value={value}
+               onChange={this.handleChange} />
+      </fieldset>
+    )
+  }
+}
+function BoilingVerdict(props) {  
+  if (props.celsius >= 100) {
+    return <p>The water would boil.</p>
+  }
+  return <p>The water would not boil.</p>
+}
+class Calculator extends React.Component {  
+  constructor(props) {
+    super(props)
+    this.state = {value: '', scale: 'c'}
+  }
+
+  handleCelsiusChange=(value) =>{
+    this.setState({scale: 'c', value})
+  }
+
+  handleFahrenheitChange=(value)=> {
+    this.setState({scale: 'f', value})
+  }
+
+  render() {
+    const scale = this.state.scale
+    const value = this.state.value
+    const celsius = scale === 'f' ? tryConvert(value, toCelsius) : value
+    const fahrenheit = scale === 'c' ? tryConvert(value, toFahrenheit) : value
+
+    return (
+      <div>
+        <TemperatureInput
+          scale="c"
+          value={celsius}
+          onChange={this.handleCelsiusChange} />
+        <TemperatureInput
+          scale="f"
+          value={fahrenheit}
+          onChange={this.handleFahrenheitChange} />
+        <BoilingVerdict
+          celsius={parseFloat(celsius)} />
+      </div>
+    )
+  }
+}
+export default Calculator
