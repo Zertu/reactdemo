@@ -15,10 +15,14 @@ class TodoList extends Component {
             e.target.value=''
         }
     }
+    toggle(todo){
+        todo.complete=!todo.complete
+    }
     render() {
-        const {filter,filteredTodos, todos} = this.props.store
-        const todoLis = todos.map(todo => (
+        const {clearComplete,filter,filteredTodos, todos} = this.props.store
+        const todoLis = filteredTodos.map(todo => (
             <li key={todo.id}>
+                <input type="checkbox" onChange={this.toggle.bind(this,todo)} value={todo.complete}/>
                 {todo.value}</li>
         ))
         return (
@@ -27,6 +31,7 @@ class TodoList extends Component {
                 <input className="create" onKeyPress={this.createnew}/>
                 <input className='filter' value={filter} onChange={this.filter}/>
                 <ul>{todoLis}</ul>
+                <a href="#" onClick={clearComplete}>清除已完成</a>
             </div>
         )
     }

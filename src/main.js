@@ -10,8 +10,6 @@ const render = (Component) => {
   )
 }
 
-
-console.log(store)
 render(<TodoList store={store}/>)
 // const element = <Welcome name="Sara" />
 // ReactDOM.render(
