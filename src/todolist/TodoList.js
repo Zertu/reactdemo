@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
-
+import {Todo}from './app.scss'
 @observer
 class TodoList extends Component {
     constructor(prop) {
@@ -26,7 +26,7 @@ class TodoList extends Component {
                 {todo.value}</li>
         ))
         return (
-            <div>
+            <div className='Todo'>
                 <h1>todos</h1>
                 <input className="create" onKeyPress={this.createnew}/>
                 <input className='filter' value={filter} onChange={this.filter}/>
