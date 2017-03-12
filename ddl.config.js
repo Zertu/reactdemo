@@ -4,7 +4,8 @@ const vendors = [
     'react',
     'react-dom',
     'react-css-modules',
-    'mobx-react'
+    'mobx-react',
+    'react-router-dom'
 ]
 
 module.exports = {

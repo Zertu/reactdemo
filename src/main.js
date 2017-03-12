@@ -1,19 +1,17 @@
+import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
+
+import BasicExample from './react-router/basicexample'
 import Calculator from './app/app.js'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import store from './todolist/TodoStore'
-import TodoList from './todolist/TodoList'
 import ReactAnimation from './reactanimation/animation'
+import ReactDOM from 'react-dom'
+import TodoList from './todolist/TodoList'
+import store from './todolist/TodoStore'
+
 const render = (Component) => {
-  ReactDOM.render(
-      Component,
-    document.getElementById('root')
-  )
+  ReactDOM.render(Component, document.getElementById('root'))
 }
 
-render(<ReactAnimation />)
-// const element = <Welcome name="Sara" />
-// ReactDOM.render(
-//   element,
-//   document.getElementById('root')
-// )
+render(<BasicExample/>)
+// const element = <Welcome name="Sara" /> ReactDOM.render(   element,
+// document.getElementById('root') )
