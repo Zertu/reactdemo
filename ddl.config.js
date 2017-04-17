@@ -1,27 +1,20 @@
-const webpack = require('webpack')
+const webpack = require('webpack'),
+    path = require('path')
 
-const vendors = [
-    'react',
-    'react-dom',
-    'react-css-modules',
-    'mobx-react',
-    'react-router-dom'
-]
+const vendors = ['react', 'react-dom', 'react-css-modules', 'mobx-react', 'react-router-dom']
 
 module.exports = {
     output: {
-        path: 'dist',
+        path: path.resolve(__dirname + '/dist'),
         filename: '[name].js',
-        library: '[name]',
+        library: '[name]'
     },
     entry: {
-        'lib': vendors,
+        'lib': vendors
     },
-    plugins: [
-        new webpack.DllPlugin({
-            path: 'manifest.json',
-            name: '[name]',
-            context: __dirname,
-        }),
-    ],
+    plugins: [new webpack.DllPlugin({
+        path: 'manifest.json',
+        name: '[name]',
+        context: __dirname
+    })]
 }
