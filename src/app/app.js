@@ -1,9 +1,10 @@
+import {BreadcrumbDivider, Divider} from 'semantic-ui-react'
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
 
-import {Divider} from 'semantic-ui-react';
 import React from 'react'
 import Topbar from './Topbar/Topbar'
-import routeConfig from '../routeConfig'
+import barConfig from '../routeConfig/barConfig'
+import contextConfig from '../routeConfig/contextConfig'
 import styles from './app.css'
 
 const RouteWithSubRoutes = route => (
@@ -25,9 +26,16 @@ class App extends React.Component {
     return (
        <Router>
          <div>
-      {routeConfig.map((route, i) => (
+      {barConfig.map((route, i) => (
         <RouteWithSubRoutes key={i} {...route}/>
-      ))}</div>
+      ))}
+        <div>
+          {contextConfig.map((route, i) => (
+        <RouteWithSubRoutes key={i} {...route}/>
+      ))}
+        </div>
+      
+      </div>
        </Router>
          
     )
