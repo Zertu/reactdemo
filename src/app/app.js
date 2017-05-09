@@ -12,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>hello,world</div>
+      <div><h1>分词器</h1></div>
     )
   }
 }
