@@ -3,6 +3,7 @@ const webpack = require('webpack'), {resolve} = require('path'),
 module.exports = {
     //页面入口文件配置
     entry: [
+        'whatwg-fetch',
         'webpack-dev-server/client?http://localhost:3000',
         // bundle the client for webpack-dev-server and connect to the provided endpoint
 

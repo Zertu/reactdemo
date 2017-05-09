@@ -1,5 +1,6 @@
 import { Item, Menu } from 'semantic-ui-react'
 
+import {NavLink} from 'react-router-dom';
 import React from 'react'
 
 class Topbar extends React.Component {
@@ -28,7 +29,14 @@ class Topbar extends React.Component {
         name='Separatewords'
         active={activeItem === 'Separatewords'}
          onClick={this.handleItemClick}>
-            分词
+         <NavLink to="/">分词</NavLink>  
+        </Menu.Item>
+        <Menu.Item 
+        color='violet'
+        name='analysis'
+        active={activeItem === 'analysis'}
+         onClick={this.handleItemClick}>
+            <NavLink to="/analysis">情感分析</NavLink>   
         </Menu.Item>
       </Menu>
     )
