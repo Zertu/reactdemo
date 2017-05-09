@@ -7,7 +7,7 @@ class Topbar extends React.Component {
         super(props)
         const location = this.props.history.location
         if(!location.length){
-            this.state={ activeItem: 'fenci' }
+            this.state={ activeItem: 'Separatewords' }
         }
     }
 
@@ -18,14 +18,15 @@ class Topbar extends React.Component {
   render() {
     const { activeItem } = this.state
     return (
-      <Menu color='brown'  inverted >
+      
+      <Menu size='huge' color='brown'  inverted >
         <Menu.Item>
           <h1>分词器</h1>
         </Menu.Item>
         <Menu.Item 
         color='violet'
-        name='fenci'
-        active={activeItem === 'fenci'}
+        name='Separatewords'
+        active={activeItem === 'Separatewords'}
          onClick={this.handleItemClick}>
             分词
         </Menu.Item>
