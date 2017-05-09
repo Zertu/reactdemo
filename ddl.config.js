@@ -1,7 +1,7 @@
 const webpack = require('webpack'),
     path = require('path')
 
-const vendors = ['react', 'react-dom', 'mobx-react', 'react-router-dom']
+const vendors = ['react', 'react-dom', 'mobx', 'mobx-react', 'react-router-dom']
 
 module.exports = {
     output: {
