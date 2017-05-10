@@ -1,12 +1,12 @@
 import { Item, Menu } from 'semantic-ui-react'
 
-import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 import React from 'react'
 
 class Topbar extends React.Component {
     constructor(props) {
         super(props)
-        const location = this.props.history.location
+        const location = this.props.path
         if(!location.length){
             this.state={ activeItem: 'Separatewords' }
         }

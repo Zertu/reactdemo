@@ -2,8 +2,8 @@ import {BreadcrumbDivider, Divider} from 'semantic-ui-react'
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
 
 import React from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Topbar from './Topbar/Topbar'
-import barConfig from '../routeConfig/barConfig'
 import contextConfig from '../routeConfig/contextConfig'
 import styles from './app.css'
 
@@ -26,13 +26,17 @@ class App extends React.Component {
     return (
        <Router>
          <div>
-      {barConfig.map((route, i) => (
-        <RouteWithSubRoutes key={i} {...route}/>
-      ))}
+           <Topbar path='' />
         <div>
+          <ReactCSSTransitionGroup
+            transitionName="fade"
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={300}
+          >
           {contextConfig.map((route, i) => (
         <RouteWithSubRoutes key={i} {...route}/>
       ))}
+          </ReactCSSTransitionGroup>
         </div>
       
       </div>
