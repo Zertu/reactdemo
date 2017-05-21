@@ -7,8 +7,9 @@ import Topbar from './Topbar/Topbar'
 import contextConfig from '../routeConfig/contextConfig'
 import styles from './app.css'
 
-const RouteWithSubRoutes = route => (
-  <Route path={route.path} render={props => (
+const RouteWithSubRoutes = (route) => (
+  <Route exact  path={route.path} render={props => (
+    // pass the sub-routes down to keep nesting
     <route.component {...props} routes={route.routes}/>
   )}/>
 )
@@ -28,15 +29,16 @@ class App extends React.Component {
          <div>
            <Topbar path='' />
         <div>
-          <ReactCSSTransitionGroup
+
+          {contextConfig.map((route, i) => (
+        <RouteWithSubRoutes key={i} {...route}/>
+      ))}
+          {/*<ReactCSSTransitionGroup
             transitionName="fade"
             transitionEnterTimeout={300}
             transitionLeaveTimeout={300}
           >
-          {contextConfig.map((route, i) => (
-        <RouteWithSubRoutes key={i} {...route}/>
-      ))}
-          </ReactCSSTransitionGroup>
+          </ReactCSSTransitionGroup>*/}
         </div>
       
       </div>

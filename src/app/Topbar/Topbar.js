@@ -1,25 +1,24 @@
 import { Item, Menu } from 'semantic-ui-react'
 
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import React from 'react'
 
 class Topbar extends React.Component {
     constructor(props) {
         super(props)
         const location = this.props.path
+        console.log(this.props)
         if(!location.length){
             this.state={ activeItem: 'Separatewords' }
         }
     }
-
   state = {}
-
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
   render() {
     const { activeItem } = this.state
-    return (
-      
+    // if(activeItem=='Separatewords')
+
+    return (      
       <Menu size='huge' color='brown'  inverted >
         <Menu.Item>
           <h1>分词器</h1>
@@ -29,7 +28,7 @@ class Topbar extends React.Component {
         name='Separatewords'
         active={activeItem === 'Separatewords'}
          onClick={this.handleItemClick}>
-         <NavLink to="/">分词</NavLink>  
+         <NavLink to="/splitWords">分词</NavLink>  
         </Menu.Item>
         <Menu.Item 
         color='violet'
@@ -37,6 +36,13 @@ class Topbar extends React.Component {
         active={activeItem === 'analysis'}
          onClick={this.handleItemClick}>
             <NavLink to="/analysis">情感分析</NavLink>   
+        </Menu.Item>
+        <Menu.Item 
+        color='violet'
+        name='viewData'
+        active={activeItem === 'viewData'}
+         onClick={this.handleItemClick}>
+            <NavLink to="/viewData">数据展示</NavLink>   
         </Menu.Item>
       </Menu>
     )
