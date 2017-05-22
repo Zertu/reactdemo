@@ -6,8 +6,6 @@ export default[
   {
     path : '/',
     component : Welcome,
-    exact:true,
-    strict:true
   }, {
     path : '/splitWords',
     component : Separatewords
