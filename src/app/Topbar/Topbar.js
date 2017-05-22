@@ -7,7 +7,6 @@ class Topbar extends React.Component {
   constructor(props) {
     super(props)
     const location = this.props.path
-    console.log(this)
     this.state = {
       activeItem: location
     }
