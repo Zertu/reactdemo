@@ -2,10 +2,8 @@ import {BreadcrumbDivider, Divider} from 'semantic-ui-react'
 import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
 
 import React from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Topbar from './Topbar/Topbar'
 import contextConfig from '../routeConfig/contextConfig'
-import styles from './app.css'
 
 const RouteWithSubRoutes = (route) => (
   <Route exact  path={route.path} render={props => (

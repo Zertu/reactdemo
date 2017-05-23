@@ -8,6 +8,7 @@ class Welcome extends Component {
             <div>
                 <Container text>
                 <Header as='h2'>欢迎</Header>
+                
                 </Container>
             </div>
         )
