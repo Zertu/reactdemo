@@ -1,3 +1,4 @@
+import Datavisualization from '../app/Datavisualization/Datavisualization'
 import Dateviewer from '../app/Dateviewer/Dateviewer'
 import Separatewords from '../app/Separatewords/Separatewords'
 import Welcome from './Welcome'
@@ -12,5 +13,9 @@ export default[
   }, {
     path : '/viewData',
     component : Dateviewer
+  },
+  {
+    path:'/datavisualization',
+    component:Datavisualization
   }
 ]

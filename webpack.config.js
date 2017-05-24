@@ -25,6 +25,7 @@ module.exports = {
     devServer: {
         hot: true,
         // enable HMR on the server
+        inline: true,
         port: 3000,
         contentBase: resolve(__dirname, 'dist'),
         // match the output path
@@ -50,15 +51,11 @@ module.exports = {
                     }
                 ]
             }, {
-                test: /\.js|jsx$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            }
+            }, 
         ]
-    },
-    //其它解决方案配置
-    resolve: {
-        extensions: ['.js', '.json', '.scss']
     },
     plugins: [
         new webpack.DllReferencePlugin({context: __dirname, manifest: require('./manifest.json')}),

@@ -25,8 +25,8 @@ class Topbar extends React.Component {
         <Menu.Item
           onClick={this.handleItemClick}
           color='violet'
-          name='Separatewords'
-          active={activeItem === 'Separatewords'}
+          name='splitWords'
+          active={activeItem === 'splitWords'}
           as={NavLink}
           to="/splitWords">
           分词
@@ -47,6 +47,14 @@ class Topbar extends React.Component {
           active={activeItem === 'viewData'}
           as={NavLink}
           to="/viewData">数据展示
+        </Menu.Item>
+        <Menu.Item
+          onClick={this.handleItemClick}
+          color='violet'
+          name='datavisualization'
+          active={activeItem === 'datavisualization'}
+          as={NavLink}
+          to="/datavisualization">可视化图表
         </Menu.Item>
       </Menu>
     )
