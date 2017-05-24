@@ -74,10 +74,8 @@ class Separatewords extends React.Component {
       }
     }
     return (
-
       <Container text>
         <Header as='h2'>Header</Header>
-
         <Step.Group>
           <Step>
             <label>需要分割的词</label>

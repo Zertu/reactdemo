@@ -56,20 +56,20 @@ class Datatable extends React.Component {
   componentDidMount = async() => {
     this.setState({loading: 1})
     const {pageSize,url}=this.state,
-    row = await fetch('http://localhost:3001/'+url+'?pagenum=1&num=10', {method: 'get'}),
+    row = await fetch('http://139.224.232.97:3001/'+url+'?pagenum=1&num=10', {method: 'get'}),
     num = Math.ceil(row.count/pageSize)
     this.setState({data: row.rows, totalNumber:Math.ceil(row.count/num)})
 
   }
   handleChange = async(idx) => {    
     const {pageSize,url}=this.state,
-    row = await fetch('http://localhost:3001/'+url+'?pagenum='+idx+'&num='+pageSize, {method: 'get'})
+    row = await fetch('http://139.224.232.97:3001/'+url+'?pagenum='+idx+'&num='+pageSize, {method: 'get'})
     this.setState({data: row.rows, currentPage:idx})
   }
   handlePage = async (event)=>{
     const data=event.target.children[0].innerHTML-0,
     {currentPage,url} = this.state,
-    row = await fetch('http://localhost:3001/'+url+'?pagenum='+currentPage+'&num='+data, {method: 'get'})
+    row = await fetch('http://139.224.232.97:3001/'+url+'?pagenum='+currentPage+'&num='+data, {method: 'get'})
     this.setState({data: row.rows, pageSize:data,totalNumber:Math.ceil(row.count/data)})
   }
   handleEvent=async (event)=>{
@@ -86,7 +86,7 @@ class Datatable extends React.Component {
     url='eleme'
     break
 }
-    const row = await fetch('http://localhost:3001/'+url+'?pagenum='+currentPage+'&num='+pageSize, {method: 'get'})
+    const row = await fetch('http://139.224.232.97:3001/'+url+'?pagenum='+currentPage+'&num='+pageSize, {method: 'get'})
     this.setState({data: row.rows, currentPage: 1,url:url})
   }
   onChange = (page) => {
@@ -119,7 +119,6 @@ class Datatable extends React.Component {
         {text: '胶水牛排'},
         {text:'饿了么黑心作坊'}
       ] ,{totalNumber, pageSize, currentPage} = this.state
-      console.log(this.state)
     return (
       <div>
         <Select onChange={this.handlePage} placeholder='选择每页页数' options={options}/>
