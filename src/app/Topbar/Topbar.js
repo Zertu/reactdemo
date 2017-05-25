@@ -20,7 +20,7 @@ class Topbar extends React.Component {
     return (
       <Menu size='huge' color='brown'  inverted>
         <Menu.Item>
-          <h1>分词器</h1>
+          <h1>首页</h1>
         </Menu.Item>
         <Menu.Item
           onClick={this.handleItemClick}
