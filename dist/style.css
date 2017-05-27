@@ -182,3 +182,12 @@
     display: none;
   }
 }
+
+
+h1>a{
+  color: rgba(255,255,255,.9);
+}
+
+h1>a:hover{
+  color: rgba(255,255,255,.9);
+}

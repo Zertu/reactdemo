@@ -14,9 +14,6 @@ import fetch from '../../Fetch'
 class Dateviewer extends React.Component {
   constructor() {
     super()
-    this.state = {
-      someKey: 'someValue'
-    }
   }
   render() {
     return <Container><Datatable/></Container>
@@ -72,8 +69,8 @@ class Datatable extends React.Component {
     row = await fetch('http://139.224.232.97:3001/'+url+'?pagenum='+currentPage+'&num='+data, {method: 'get'})
     this.setState({data: row.rows, pageSize:data,totalNumber:Math.ceil(row.count/data)})
   }
-  handleEvent=async (event)=>{
-    let data=event.target.children[0].innerHTML,
+  handleEvent=async (event,d)=>{
+    let data=d.value,
     {pageSize, currentPage,url} = this.state
     switch (data){
     case '黄记煌三汁焖锅再曝丑闻':
@@ -114,11 +111,12 @@ class Datatable extends React.Component {
         }, {
           text: 30
         }
-      ],eventList=[
-        {text:'黄记煌三汁焖锅再曝丑闻'},
-        {text: '胶水牛排'},
-        {text:'饿了么黑心作坊'}
-      ] ,{totalNumber, pageSize, currentPage} = this.state
+      ],
+        eventList=[
+        {text:'饿了么黑心作坊',value:'饿了么黑心作坊',key:1},
+        {text:'黄记煌三汁焖锅再曝丑闻',value:'黄记煌三汁焖锅再曝丑闻',key:2},
+        {text: '胶水牛排',value:'胶水牛排',key:3}
+      ],{totalNumber, pageSize, currentPage} = this.state
     return (
       <div>
         <Select onChange={this.handlePage} placeholder='选择每页页数' options={options}/>

@@ -20,7 +20,7 @@ class Topbar extends React.Component {
     return (
       <Menu size='huge' color='brown'  inverted>
         <Menu.Item>
-          <h1>首页</h1>
+          <h1><NavLink to="/">首页</NavLink></h1>
         </Menu.Item>
         <Menu.Item
           onClick={this.handleItemClick}
@@ -34,11 +34,11 @@ class Topbar extends React.Component {
         <Menu.Item
           onClick={this.handleItemClick}
           color='violet'
-          name='analysis'
-          active={activeItem === 'analysis'}
+          name='Crawer'
+          active={activeItem === 'Crawer'}
           as={NavLink}
-          to="/analysis">
-          情感分析
+          to="/crawer">
+          爬取信息
         </Menu.Item>
         <Menu.Item
           onClick={this.handleItemClick}

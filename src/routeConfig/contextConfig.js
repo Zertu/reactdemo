@@ -1,3 +1,4 @@
+import Crawer from '../app/Crawer/Crawer'
 import Datavisualization from '../app/Datavisualization/Datavisualization'
 import Dateviewer from '../app/Dateviewer/Dateviewer'
 import Separatewords from '../app/Separatewords/Separatewords'
@@ -13,6 +14,10 @@ export default[
   }, {
     path : '/viewData',
     component : Dateviewer
+  },
+  {
+    path : '/crawer',
+    component : Crawer
   },
   {
     path:'/datavisualization',
