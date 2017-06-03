@@ -49,9 +49,6 @@ class Separatewords extends React.Component {
       })
     })
   }
-  handleRef = c => {
-    this.inputRef = c
-  }
   render() {
     let result = '',
       loading = this.state.loading

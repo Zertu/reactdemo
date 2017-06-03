@@ -7,7 +7,7 @@
     "test": "npm test",
     "start": "webpack-dev-server ",
     "build-lib": "webpack --config ddl.config.js",
-    "build": "webpack -w"
+    "build": "webpack --config webpack.build.js"
   },
   "repository": {
     "type": "git",

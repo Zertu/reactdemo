@@ -1,7 +1,13 @@
 const webpack = require('webpack'),
     path = require('path')
 
-const vendors = ['react', 'react-dom', 'mobx', 'mobx-react', 'react-router-dom','semantic-ui-react']
+const vendors = [
+    'react',
+    'react-dom',
+    'mobx',
+    'mobx-react',
+    'semantic-ui-react'
+]
 
 module.exports = {
     output: {
@@ -12,5 +18,11 @@ module.exports = {
     entry: {
         'lib': vendors
     },
-    plugins: [new webpack.DllPlugin({path: 'manifest.json', name: '[name]', context: __dirname})]
+    plugins: [
+
+        new webpack
+            .optimize
+            .UglifyJsPlugin({sourceMap: false}),
+        new webpack.DllPlugin({path: 'manifest.json', name: '[name]', context: __dirname})
+    ]
 }
